@@ -1,0 +1,21 @@
+1
+v=float(input("введите скорость транспортного средства (в км/ч):"))
+t=int(input("введите сколько часов оно двигалось:"))
+for counter in range(1,t+1):
+    s=v*counter
+    print(s)
+3
+t=int(input("введите сколько часов оно двигалось:"))
+s=1
+for counter in range(1,t+1):
+    s=s*counter
+print(s)
+4
+t=int(input("введите количество дней:"))
+s=int(input("среднесуточное увелечение :"))
+n=int(input("стартовое количество:"))
+
+for counter in range(1,t):
+    d=n*(s/100)+n
+    n=n*(s/100)+n
+    print(d)
