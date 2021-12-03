@@ -1,0 +1,59 @@
+1)
+def find(lst, x):
+    for y in range(0, len(lst)):
+        if lst[y] == x:
+            return y + 1
+        else:
+            return "Такого числа нет"
+from random import randint
+lst = []
+k = 1
+m = int(input('Сколько чисел нужно в списке: '))
+while k <= m:
+    lst.append(randint(-10, 10))
+    k += 1
+lst.sort()
+print (lst)
+x = int(input('Какое число нужно найти: '))
+print(find(lst, x))
+import time 
+start_time = time.time()
+print("--- %s seconds ---" % (time.time() - start_time))
+
+2)
+def find(lst, x):
+    left = 0
+    right = len(lst)-1
+    while left <= right:
+        m = (left+ right)//2
+        if lst[m] == x:
+            return m
+        if lst[m] < x:
+            left = m + 1
+        elif lst[m] > x:
+            right = m - 1
+    return False
+from random import randint
+lst = []
+k = 1
+m = int(input('Сколько чисел нужно в списке: '))
+while k <= m:
+    lst.append(randint(-10, 10))
+    k += 1
+lst.sort()
+print (lst)
+x = int(input('Какое число нужно найти: '))
+print(find(lst, x))
+import time 
+start_time = time.time()
+print("--- %s seconds ---" % (time.time() - start_time))
+
+3)
+def recursion(lst,item,left,right):
+    m = (right+left)//2
+    if(lst[m]==item):
+        return m
+    if(lst[m]<item):
+        return recursion(lst,item,m-1,right)
+    else:
+        return recursion(lst,item,left,m+1)
