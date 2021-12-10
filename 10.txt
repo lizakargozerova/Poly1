@@ -1,0 +1,27 @@
+1)
+def fib(n):
+    if n in (1, 2):
+        return 1
+    return fib(n - 1) + fib(n - 2)
+print(fib(6))
+2) Пространственная сложность — O(n) Т.к. можно занести n-ое количество двнных
+Временная сложность — O(2n) Т.к. каждый узел выходит из 2-х другиз узлов и все это может быть n-раз
+3)
+voc_fib = {1: 1, 2: 1}
+
+def f_meme(n):
+    res = voc_fib.get(n)
+    if res is None:
+        res = f_meme(n-2) + f_meme(n-1)
+        voc_fib[n] = res
+    return res
+
+4)  Сложность: n, так как при первом вычислении значения числа под определённым номером программа в дальнейшем будет обращаться к нему из словаря, а не вычислять заново.
+
+5)
+def f_meme_cyc(n):
+    res = voc_fib.get(n)
+    while res == None:
+        res = f_meme(n-2) + f_meme(n-1)
+        voc_fib[n] = res
+    return res
